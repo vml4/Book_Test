@@ -1,1 +1,3 @@
-wget -O downloaded_book.txt "http://www.gutenberg.org/files/12345/12345-0.txt" --no-check-certificate  && cat downloaded_book.txt | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | tr ' ' '\n' | grep -v '^$' | sort | uniq -c | sort -nr | head -n 10
+read -p "Enter the link " link
+
+wget -O downloaded_book.txt $link --no-check-certificate  && cat downloaded_book.txt | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | tr ' ' '\n' | grep -v '^$' | sort | uniq -c | sort -nr | head -n 10
